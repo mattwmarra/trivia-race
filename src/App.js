@@ -113,8 +113,9 @@ function App() {
                           score={score}
                           startGame={startGame}
                            />
-            }
-          }
+
+          }[quizState]
+        }
           </section>
             <Leaderboard quizState={quizState} score={score}/>
           </main>

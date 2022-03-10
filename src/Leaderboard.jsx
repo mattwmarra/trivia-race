@@ -4,6 +4,7 @@ import { useCollection, useDocument } from 'react-firebase-hooks/firestore';
 
 function Leaderboard({quizState, score}) {
     const [leaders, loading] = useCollection(db.collection('leaderboard').limit(7).orderBy("score", "desc"));
+
     if(quizState === "running"){
         return (
             <div className="scoreboard">
