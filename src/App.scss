@@ -13,23 +13,19 @@
   text-align: left;
   font-size: 48px;
   padding-top: 0px;
+  h1 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 89px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 150%;
+    padding-bottom: 49px;
 }
 
-.header h1 {
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 100%;
-  margin-bottom: 89px;
-}
 
-.header h2 {
-  font-size: 24px;
-  line-height: 150%;
-  padding-bottom: 49px;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .highlight {
@@ -49,65 +45,25 @@ main{
   justify-content: flex-start;
 }
 
-.leaderboard {
-  border-radius: 20px;
-  background: #292830;
-  box-shadow: inset -18px -18px 30px rgba(105, 105, 105, 0.1), inset 18px 18px 30px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  flex: 0.3;
-  min-height: 588px;
-  color: #D6D6D6;
-  text-align: left;
-  padding: 36px 48px;
-  font-size: 24px;
-}
-.leaderboard h2 {
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-.leaderboard hr {
-  color: #2D2C33;
-  background: #2D2C33;
-  
-}
-
-.scoreboard {
-  border: 1px solid #28282E;
-  box-sizing: border-box;
-  /* Button Shadow */
-  
-  background: #292830;
-  box-shadow: inset -18px -18px 30px rgba(105, 105, 105, 0.1), inset 18px 18px 30px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  flex: 0.3;
-  min-height: 588px;
-  color: #E9E9E9;
-  text-align: center;
-  padding: 36px 48px;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .quiz {
   flex: .7;
   justify-content: flex-start;
 }
 
 .trivia-button {
-  background-color: #292830;
-  -webkit-box-shadow: inset 18px 18px 30px 0px rgba(0,0,0,0.25), inset -18px -18px 30px 0px rgba(105,105,105,0.10); 
-  box-shadow: inset 18px 18px 30px 0px rgba(0,0,0,0.25), inset -18px -18px 30px 0px rgba(105,105,105,0.10);
-  width: 360px;
-  height: 120px;
+  background: linear-gradient(116.03deg, #2F2F3D -65.29%, #181822 92.05%);
+  border: 1px solid #28282E;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1), -5px -5px 20px rgba(207, 200, 200, 0.12);
+  border-radius: 20px;
+  width: 300px;
+  height: 83px;
   font-weight: 600;
   font-size: 24px;
   border-radius: 20px;
-  padding: 22px 68px;
   color: #E9E9E9;
   cursor: pointer;
-  margin: 24px;
+  margin: 12px;
 }
 
 .start-button {
@@ -128,15 +84,29 @@ main{
 
 .question {
   color: #E9E9E9;
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 68px;
+  height: 60px;
+}
+
+.answers {
+  align-content: flex-start;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 62px;
+  width: 80%;
 }
 
 .timer {
-  width: 75%;
-  background-color: #292830;
-  -webkit-box-shadow: inset 18px 18px 30px 0px rgba(0,0,0,0.25), inset -18px -18px 30px 0px rgba(105,105,105,0.10); 
-  box-shadow: inset 18px 18px 30px 0px rgba(0,0,0,0.25), inset -18px -18px 30px 0px rgba(105,105,105,0.10);
-  padding: 12px;
-  border-radius: 100px;
+  width: 95%;
+  background: #34333D;
+  border: 1.23962px solid #3C3C3C;
+  box-sizing: border-box;
+  box-shadow: inset -11.1676px -13.0289px 13.0289px -4.65318px rgba(105, 105, 105, 0.1), inset 4.65318px 3.72254px 14.8902px rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  padding: 8px;
+
 }
 .remaining { 
   background: rgb(2,0,36);
@@ -144,6 +114,7 @@ main{
   background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(192,52,22,1) 0%, rgba(255,107,0,1) 100%);
   background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(192,52,22,1) 0%, rgba(255,107,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#ff6b00",GradientType=1);
+
   box-shadow: 0 0 8px rgba(255, 107, 0, 0.5) ;
   height: 20px;
   border-radius: 100px;

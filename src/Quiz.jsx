@@ -10,7 +10,7 @@ function Quiz({question, answers, updateScore, score, time, setQuizState}) {
     return (
         <div className="">
           <p className="question">{cleanUpString(question)}</p>
-          <div className="">
+          <div className="answers">
             {answers.answers?.map((answer, index) => {     
               const isCorrect = (index === answers.correctIndex) ? true : false;           
               return(
@@ -29,7 +29,7 @@ function Quiz({question, answers, updateScore, score, time, setQuizState}) {
 const TimeRenderer = ({total}) => {
     return (
         <div className="timer">
-            <div className="remaining" style={{width: (total/45000)*100 + "%"}}></div>
+            <div className="remaining" style={{width: (total/30000)*100 + "%"}}></div>
         </div>
     )
 }

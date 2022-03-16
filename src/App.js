@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import './index.css'
 import axios from 'axios';
 import { useState } from 'react';
@@ -9,6 +9,7 @@ import Countdown from 'react-countdown';
 import Results from './Results';
 import Leaderboard from './Leaderboard';
 import Quiz from './Quiz';
+import Start from './Start';
 
 /*
   -The quiz allots 45 seconds for the player to answer as many questions as they can
@@ -35,20 +36,27 @@ function App() {
   const [timeScore, setTimeScore] = useState(0);
   const [timer, setTimer] = useState(Date.now()); 
   const [questionTime, setQuestionTime] = useState(Date.now())
+  
   const startGame = async () => {
     await getQuestions();
     setScore(0);
     setTimer(Date.now());
     setQuizState("running");
   }
+  
   const getQuestions = async ()  => {
     let result = await axios("https://opentdb.com/api.php?amount=50&type=multiple");
     setQuestions(result.data.results);
   }
-  const quizTime = 45000;
+  
+  const quizTime = 30000;
+  
+  
   const generateRandom = (max) => {
     return Math.floor(Math.random() * max);
   }
+
+
   const goToNextQuestion = () => {
     setQuestionTime(Date.now())
     if(!questions){return;}
@@ -95,13 +103,13 @@ function App() {
           <header className="header">
             <h1><span className="uppercase highlight">Trivia</span><br/> Race</h1>
           </header>
-          {!user 
-          ? <LoginButton/> 
-          : <button onClick={startGame} hidden={quizState !== "waiting"} 
-              className="start-button">Start</button>
-          }
           {
             {
+              'waiting': <Start
+                         user={user}
+                         startGame={startGame}
+                         quizState={quizState}
+                         />,
               'running': <Quiz 
                           question={questions?.[quizIndex].question} 
                           answers={answers} updateScore={updateScore}
@@ -109,11 +117,11 @@ function App() {
                           setQuizState={setQuizState}
                           time={timer+quizTime}
                         />,
-              'finished' : <Results 
+              'finished' : <Results
+                          user={user} 
                           score={score}
                           startGame={startGame}
                            />
-
           }[quizState]
         }
           </section>
@@ -124,13 +132,6 @@ function App() {
   );
 }
 
-const LoginButton = () => {
-  const login = () => {
-    auth.signInWithPopup(provider)
-  }
-  return (
-    <button onClick={login}>Sign in with Google</button>
-  )
-}
+
 
 export default App;
