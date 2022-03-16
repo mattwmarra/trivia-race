@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/trivia-race/static/css/main.be85b02a.css",
+    "main.js": "/trivia-race/static/js/main.178a1790.js",
+    "static/js/787.c16d3a45.chunk.js": "/trivia-race/static/js/787.c16d3a45.chunk.js",
+    "index.html": "/trivia-race/index.html",
+    "main.be85b02a.css.map": "/trivia-race/static/css/main.be85b02a.css.map",
+    "main.178a1790.js.map": "/trivia-race/static/js/main.178a1790.js.map",
+    "787.c16d3a45.chunk.js.map": "/trivia-race/static/js/787.c16d3a45.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be85b02a.css",
+    "static/js/main.178a1790.js"
+  ]
+}
