@@ -5,6 +5,8 @@ function Quiz({question, answers, updateScore, score, time, setQuizState}) {
   const cleanUpString = (string) => {
       string = string.replace(/&quot;/g, '\"');
       string = string.replace(/&#039;/g, "\'");
+      string = string.replace(/&rsquo;/g, "\'");
+      //&rsquo;
       return string;
     }
     return (

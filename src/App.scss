@@ -1,7 +1,49 @@
-.App {
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 120px;
+
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Tablets and small desktops
+$screen-lg-max: 992px;
+
+// Large tablets and desktops
+$screen-xl-max: 1200px;
+// Small devices
+@mixin sm {
+   @media (max-width: #{$screen-sm-max}) {
+       @content;
+   }
+}
+
+// Medium devices
+@mixin md {
+   @media (max-width: #{$screen-md-max}) {
+       @content;
+   }
+}
+
+// Large devices
+@mixin lg {
+   @media (max-width: #{$screen-lg-max}) {
+       @content;
+   }
+}
+
+// Extra large devices
+@mixin xl {
+   @media (max-width: #{$screen-xl-max}) {
+       @content;
+   }
+  }
+
+body {
   background-image: linear-gradient(#34333D, #11101C);
+  height: 100%;
+}
+
+.App {
   text-align: center;
-  height: 100vh;
   padding: 167px 5%;
   font-family: 'Montserrat', sans-serif;
   color: #E9E9E9;
@@ -43,6 +85,10 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  @include md {
+    justify-content: center;
+  }
 }
 
 .quiz {
@@ -67,8 +113,12 @@ main{
 }
 
 .start-button {
-  background-image: linear-gradient(.90turn, #13F97C, #3D9B69);
+  background: linear-gradient(280.38deg, #13F97C -29.24%, #3D9B69 119.81%);
+
   border: 1px solid #6EF9AE;
+  /* Button Shadow */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1), -5px -5px 20px rgba(207, 200, 200, 0.12);
+
   font-weight: 600;
   font-size: 24px;
   border-radius: 20px;
